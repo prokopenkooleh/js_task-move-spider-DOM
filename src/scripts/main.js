@@ -11,8 +11,8 @@ wall.addEventListener('click', (e) => {
   const [spiderWidth, spiderHeight] = [spiderRect.width, spiderRect.height];
 
   const [targetLeftOut, targetTopOut, clLeft, clTop] = [
-    target.offsetLeft,
-    target.offsetTop,
+    wall.getBoundingClientRect().left,
+    wall.getBoundingClientRect().top,
     target.clientLeft,
     target.clientTop,
   ];
