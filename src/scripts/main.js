@@ -3,7 +3,6 @@
 const wall = document.querySelector('.wall');
 
 wall.addEventListener('click', (e) => {
-  const target = e.target;
   const [mouseX, mouseY] = [e.clientX, e.clientY];
 
   const spider = document.querySelector('.spider');
@@ -13,8 +12,8 @@ wall.addEventListener('click', (e) => {
   const [targetLeftOut, targetTopOut, clLeft, clTop] = [
     wall.getBoundingClientRect().left,
     wall.getBoundingClientRect().top,
-    target.clientLeft,
-    target.clientTop,
+    wall.clientLeft,
+    wall.clientTop,
   ];
 
   let leftX = mouseX - targetLeftOut - clLeft;
@@ -22,12 +21,12 @@ wall.addEventListener('click', (e) => {
 
   leftX = Math.min(
     Math.max(leftX, spiderWidth / 2),
-    target.clientWidth - spiderWidth / 2,
+    wall.clientWidth - spiderWidth / 2,
   );
 
   topY = Math.min(
     Math.max(topY, spiderHeight / 2),
-    target.clientHeight - spiderHeight / 2,
+    wall.clientHeight - spiderHeight / 2,
   );
 
   spider.style.left = leftX + 'px';
