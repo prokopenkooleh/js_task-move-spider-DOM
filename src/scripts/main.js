@@ -1,12 +1,10 @@
 'use strict';
 
-document.addEventListener('click', (e) => {
-  const target = e.target;
-  const [mouseX, mouseY] = [e.pageX, e.pageY];
+const wall = document.querySelector('.wall');
 
-  if (target !== document.querySelector('.wall')) {
-    return;
-  }
+wall.addEventListener('click', (e) => {
+  const target = e.target;
+  const [mouseX, mouseY] = [e.clientX, e.clientY];
 
   const spider = document.querySelector('.spider');
   const spiderRect = spider.getBoundingClientRect();
